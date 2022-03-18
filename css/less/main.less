@@ -1,9 +1,9 @@
 :root {
 	--clr-base: #000;
-	--clr-att: #f00;
+	--clr-att: #E30613;
 
-	--min: 320px;
-	--max: 1200px;
+	--min: 360px;
+	--max: 1362px;
 
 	font-size: 10px;
 }
@@ -13,15 +13,24 @@
 .elm-hidden {
 	display: none;
 }
+.f-dark {
+    filter: brightness(0) grayscale(1);
+}
+.f-gray {
+    filter: grayscale(1) invert(1) brightness(1.1);
+}
 /* ----------------------------------- *\
 			main styles
 \* ----------------------------------- */
 body {
 	color: var(--clr-base, #000);
 	background: #fff;
+    line-height: 1.35;
+    font-size: 14px;
 }
 p, ul, ol {
 	position: relative;
+    margin-bottom: 1.35em;
 	img {
 		max-width: 100%;
 	}
@@ -33,12 +42,28 @@ p, ul, ol {
 li {
 	position: relative;
 }
+ol {
+    counter-reset: li; 
+    list-style: none;
+    li {
+    	position: relative;
+        padding-left: 30px;
+    	&:before {
+    		content: counter(li); 
+			counter-increment: li;
+            width: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+    	}
+    }
+}
 a {
 	text-decoration: none;
-	color: var(--clr-att, #f00);
+	color: var(--clr-att, #E30613);
 	&:hover {
 		text-decoration: none;
-		color: var(--clr-att, #f00);
+		color: var(--clr-att, #E30613);
 	}
 }
 a.link-main, .link-main {
@@ -48,6 +73,34 @@ a.link-main, .link-main {
 		border-bottom: none;
 	}
 }
+.link-phone, a.link-phone {
+    white-space: nowrap;
+    display: inline-block;
+    color: var(--clr-base);
+    text-decoration: none;
+    padding: 0 0 0 32px;
+    font-size: 16px;
+    line-height: 24px;
+    &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../img/icons/phone.svg) center no-repeat;
+        background-size: 100% auto;
+        .f-dark;
+        transition: filter ease 0.2s;
+    }
+    &:hover {
+        color: var(--clr-att);
+        &:before {
+            filter: none;
+        }
+    }
+}
+
 h1, .h1-title,
 h2, .h2-title,
 h3, .h3-title,
@@ -56,7 +109,92 @@ h5, .h5-title,
 h6, .h6-title {
 	display: block;
 	position: relative;
+    margin: 0 0 1em 0;
+    font-weight: bold;
     &:first-child {
         margin-top: 0;
+    }
+}
+.h1-title, h1 {
+    font-size: 24px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.title-decor {
+    padding-left: 18px;
+    &:before {
+        content: "";
+        display: block;
+        width: 3px;
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: 0;
+        background: var(--clr-att);
+    }
+}
+.text-att {
+    color: var(--clr-att);
+}
+.clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+blockquote, .bq-text {
+    display: block;
+    margin: 15px -15px;
+    padding: 30px 35px 30px 75px;
+    position: relative;
+    background: #f9f9f9;
+    &:before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 50px;
+        position: absolute;
+        top: 15px;
+        left: 30px;
+        background: url(../img/icons/quote.svg) center no-repeat;
+        background-size: 100% auto;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 768px) {
+    .h1-title, h1 {
+        font-size: 30px;
+    }
+}
+@media (min-width: 1024px) {
+    .h1-title, h1 {
+        font-size: 38px;
+        &.title-small {
+            text-transform: none;
+            font-weight: 600;
+            font-size: 34px;
+        }
+    }
+    blockquote, .bq-text {
+        margin: 15px 0 30px 0;
+        padding: 30px 25px 30px 87px;
+        &:before {
+            width: 42px;
+            height: 60px;
+        }
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+    .h1-title, h1 {
+        font-size: 48px;
+        font-weight: 600;
     }
 }

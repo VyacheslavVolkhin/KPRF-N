@@ -9,10 +9,9 @@
     from {opacity: 0;transform: translate(0, -50px);}
     to {opacity: 1;transform: translate(0, 0px);}
 }
-.i {
-	display: inline-block;
-	vertical-align: middle;
-	transition: none;
+.i, [class*="icon-"] {
+    display: block;
+    transition: none;
 }
 .img-bg-cover,
 .img-bg-contain {
@@ -59,6 +58,7 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin: 0 -12px;
 }
 .item-wrap {
     width: 100%;
@@ -66,6 +66,8 @@
     break-inside: avoid-column;
     display: block;
     animation: fadein ease 0.2s;
+    padding: 0 12px;
+    margin-bottom: 15px;
     &.wrap-more {
         &~.item-wrap {
             display: none;
