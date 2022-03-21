@@ -265,6 +265,26 @@ textarea.form-input {
         }
     }
 }
+.frm-popup {
+    padding: 40px;
+    position: relative;
+    font-size: 14px;
+    .frm-title {
+        text-align: center;
+        margin: 0 0 1em 0;
+    }
+    .frm-row {
+        display: block;
+    }
+    .frm-field {
+        margin-bottom: 15px;
+    }
+    .frm-row-submit {
+        .btn {
+            width: 100%;
+        }
+    }
+}
 .frm-row,
 .frm-field,
 .frm-row-submit {
@@ -387,6 +407,11 @@ textarea.form-input {
         .btn {
             width: 100%;
         }
+    }
+}
+@media (max-width: 479px) {
+    .frm-popup {
+        padding: 40px 24px;
     }
 }
 @media (min-width: 1024px) {

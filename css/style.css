@@ -1541,6 +1541,54 @@ body {
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.popup-box {
+  display: none;
+}
+.popup-box.fancybox-content {
+  width: 340px;
+  padding: 0;
+}
+.popup-box .fancybox-button.fancybox-close-small {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.popup-box .fancybox-button.fancybox-close-small:hover {
+  background: none;
+}
+.popup-box .fancybox-button.fancybox-close-small:hover:after,
+.popup-box .fancybox-button.fancybox-close-small:hover:before {
+  background: #000;
+}
+.popup-box .fancybox-button.fancybox-close-small:after,
+.popup-box .fancybox-button.fancybox-close-small:before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #8B949E;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1px 0 0 -9px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 1px;
+  -webkit-transition: background ease 0.2s;
+  transition: background ease 0.2s;
+}
+.popup-box .fancybox-button.fancybox-close-small:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.popup-box .fancybox-button.fancybox-close-small * {
+  display: none;
+}
+.fancybox-bg {
+  background: rgba(0, 0, 0, 0.7);
+}
 .target-box {
   margin: 0;
   padding-top: 30px;
@@ -2985,6 +3033,24 @@ textarea.form-input {
   -webkit-filter: none;
           filter: none;
 }
+.frm-popup {
+  padding: 40px;
+  position: relative;
+  font-size: 14px;
+}
+.frm-popup .frm-title {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+.frm-popup .frm-row {
+  display: block;
+}
+.frm-popup .frm-field {
+  margin-bottom: 15px;
+}
+.frm-popup .frm-row-submit .btn {
+  width: 100%;
+}
 .frm-row,
 .frm-field,
 .frm-row-submit {
@@ -3115,6 +3181,11 @@ textarea.form-input {
 }
 .frm-main-subscribe .frm-row-submit .btn {
   width: 100%;
+}
+@media (max-width: 479px) {
+  .frm-popup {
+    padding: 40px 24px;
+  }
 }
 @media (min-width: 1024px) {
   .form-input {

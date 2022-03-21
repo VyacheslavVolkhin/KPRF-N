@@ -136,7 +136,7 @@
                         <p>Не следует, однако, забывать, что убеждённость некоторых оппонентов, в своём классическом представлении, допускает внедрение экономической целесообразности принимаемых решений. Разнообразный </p>
                         <div class="actions-box">
                             <div class="action-wrap">
-                                <a href="" class="btn button-large">Обратится к депутату</a>
+                                <a href="" class="btn button-large" data-src="#popup-callback" data-fancybox>Обратится к депутату</a>
                             </div>
                             <div class="action-wrap">
                                 <a href="" class="btn button-large button-border">Общественная приемная</a>
@@ -800,7 +800,7 @@
                 <!--actions-box-->
                 <div class="actions-box">
                     <div class="action-wrap">
-                        <a href="" class="btn button-large">Обратится к депутату</a>
+                        <a href="" class="btn button-large" data-src="#popup-callback" data-fancybox>Обратится к депутату</a>
                     </div>
                     <div class="action-wrap">
                         <a href="" class="btn button-large button-border">Общественная приемная</a>
@@ -859,7 +859,7 @@
                         <p>г. Москва, Красная площадь, дом 1, офис 2</p>
                     </div>
                     <div class="cnt-action-wrap">
-                        <a href="" class="btn button-small">Связаться с депутатом</a>
+                        <a href="" class="btn button-small" data-src="#popup-callback" data-fancybox>Связаться с депутатом</a>
                     </div>
                 </div>
                 <div class="subscribe-wrap">
@@ -877,6 +877,46 @@
             </div>
         </footer>
         <!-- /footer -->
+
+        <div id="popup-callback" class="popup-box">
+            <form action="/" class="frm-popup">
+                <div class="frm-title h2-title">Обращение</div>
+                <div class="frm-row">
+                    <div class="frm-field">
+                        <input type="text" class="form-input" placeholder="Ваше имя">
+                    </div>
+                </div>
+                <div class="frm-row">
+                    <div class="frm-field">
+                        <input type="email" class="form-input" placeholder="Ваш email">
+                    </div>
+                </div>
+                <div class="frm-row">
+                    <div class="frm-field">
+                        <textarea placeholder="Текст комментария" class="form-input"></textarea>
+                    </div>
+                </div>
+                <div class="frm-row">
+                    <div class="frm-field">
+                        <div class="frm-field-file js-field-file">
+                            <input type="file">
+                            <a href="" class="btn-file js-file-button">
+                                <span class="button-title">Прикрепить документы <span class="file-info">(если есть необходимость)</span></span>
+                                <span class="button-caption js-file-caption"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="frm-row">
+                    <div class="frm-field">
+                        <div class="frm-info">Нажимая на кнопку, Вы даете согласие на обработку Персональных&nbsp;данных</div>
+                    </div>
+                </div>
+                <div class="frm-row-submit">
+                    <button type="submit" class="btn">Отправить</button>
+                </div>
+            </form>
+        </div>
 
     </div>
     <!-- /wrap -->

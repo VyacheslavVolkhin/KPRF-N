@@ -1,6 +1,49 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.popup-box {
+    display: none;
+    &.fancybox-content {
+        width: 340px;
+        padding: 0;
+    }
+    .fancybox-button.fancybox-close-small {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        &:hover {
+            background: none;
+            &:after, &:before {
+                background: #000;
+            }
+        }
+        &:after, &:before {
+            content: "";
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: #8B949E;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -1px 0 0 -9px;
+            .t-rotate(45deg);
+            border-radius: 1px;
+            transition: background ease 0.2s;
+        }
+        &:before {
+            .t-rotate(-45deg);
+        }
+        * {
+            display: none;
+        }
+    }
+}
+.fancybox-bg {
+    background: fade(#000, 70);
+}
 .target-box {
     margin: 0;
     padding-top: 30px;
